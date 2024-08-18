@@ -1,0 +1,15 @@
+.header {
+  text-align: center;
+  margin: auto;
+  margin-top: 10%;
+  width: 40%;
+  height: 30%;
+  background:  linear-gradient(to right, #ff7e5f, #5ab8f1);
+  background-size: 20% 2px;
+  background-position: 50%;
+  transition: background-size 0.25s;
+  background-repeat: no-repeat;
+}
+.header:hover {
+  background-size: 100% 2px;
+}
