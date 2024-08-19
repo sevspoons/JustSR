@@ -129,3 +129,18 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"SRwebui","sr-webui-app","build","static"),
 ]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',  # 必须在 AuthenticationMiddleware 之前
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # 必须在 Whitenoise 之前
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Whitenoise 中间件应放在所有非 Django 默认中间件之后
+]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
