@@ -1,6 +1,5 @@
 import Header from '../component/Header';
 import Choice from '../component/Choice';
-import BackgroundGalaxy from '../component/BackgroundGalaxy';
 import '../styles/HomePage.scss';
 import { useSelector,useDispatch } from 'react-redux';
 import { State } from '../stores/store';
@@ -18,7 +17,6 @@ function HomePage() {
   }
   return (
     <div>
-      <BackgroundGalaxy />
       <Header classname="header" content="HELLO"/>
       <Choice classname='choice' content={content} handleClickFunc={addClickNum} />
     </div>
